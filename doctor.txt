@@ -37,6 +37,7 @@ synon: cannot can't
 synon: everyone everybody nobody noone
 synon: be am is are was
 synon: device computer laptop phone cellphone screen wifi internet ipad tablet iphone
+syn: ok fine good great awesome thanks working fixed
 key: xnone
   decomp: *
     reasmb: I'm not sure I understand you fully.
@@ -382,5 +383,11 @@ key: no 40
   decomp: *
     reasmb: Let's try resetting the network settings. Is it connected to Wi-Fi?
     reasmb: Okay, let's check the battery health. Does it drain quickly?
-    
+key: ok 40
+  decomp: * ok *
+    reasmb: Awesome! Glad I could help get your device working. Anything else acting up?
+  decomp: * fixed *
+    reasmb: That's wonderful to hear! Let me know if you run into any other tech troubles.
+  decomp: * good *
+    reasmb: Glad to hear it's sorted out. Have a great day! 
    
