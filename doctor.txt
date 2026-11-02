@@ -390,4 +390,21 @@ key: ok 40
     reasmb: That's wonderful to hear! Let me know if you run into any other tech troubles.
   decomp: * good *
     reasmb: Glad to hear it's sorted out. Have a great day! 
+
+key: laptop 50
+  decomp: * laptop *
+    reasmb: Have you checked if the power cable is plugged into your laptop ?
+    reasmb: Is the laptop turning on at all ?
+
+key: black 50
+  decomp: *
+    reasmb: If the screen is black, try holding the power button for 10 seconds to force a restart. Does the logo appear?
+
+key: frozen 50
+  decomp: *
+    reasmb: If it's frozen, try pressing Ctrl+Alt+Delete (or Cmd+Option+Esc on Mac). Does anything pop up?
+
+key: help 50
+  decomp: *
+    reasmb: I'm here to help! Tell me what device is having trouble—like your laptop, phone, screen, or internet.
    
