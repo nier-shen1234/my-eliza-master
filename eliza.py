@@ -4,6 +4,7 @@ import logging
 import random
 import re
 from collections import namedtuple
+import random
 
 # Fix Python2/Python3 incompatibility
 try: input = raw_input
@@ -191,10 +192,14 @@ class Eliza:
         # This determines the mood 
         if any(word in text_lower for word in ['hate', 'stupid', 'idiot', 'awful', 'worst', 'dumb']):
             self.mood = "defensive"
-        elif any(word in text_lower for word in ['love', 'great','thanks', 'awesome', 'best']):
+        elif any(word in text_lower for word in ['love', 'great', 'thanks', 'awesome', 'best']):
             self.mood = "happy"
+        elif any(word in text_lower for word in ['sad', 'depressed', 'unhappy']):
+            self.mood = "sad"
         elif "!" in text_lower:
             self.mood = "excited"
+        else:
+            self.mood = None  # Reset mood to neutral after responding
 
         text = re.sub(r'\s*\.+\s*', ' . ', text)
         text = re.sub(r'\s*,+\s*', ' , ', text)
@@ -232,11 +237,29 @@ class Eliza:
 
         # This determines the mood of Eliza (The response)
         if self.mood == "defensive":
-            response_str = "I'm not sure why you have to be so rude about it."
+            response_str += " I'm not sure why you have to be so rude about it."
         elif self.mood == "happy":
-            response_str = "I'm glad to hear that you're feeling good!"
+            happy_responses = [
+                " I'm glad to hear that you're feeling good!",
+                " That's wonderful! I'm happy I could help.",
+                " Awesome! Let me know if you need anything else fixed."
+            ]
+            response_str += random.choice(happy_responses)
         elif self.mood == "excited":
-            response_str = "Wow! It sounds like you're really excited!"
+            excited_responses = [
+                " Wow! It sounds like you're really excited!",
+                " Yay! I'm excited too!",
+                " That's fantastic! Let's keep the energy up!"
+            ]
+            response_str += random.choice(excited_responses)
+        elif self.mood == "sad":
+            sad_responses = [
+                " I'm sorry to hear that you're feeling this way.",
+                " It's okay to feel sad sometimes.",
+                " I'm here for you if you want to talk about it."
+            ]
+            response_str += random.choice(sad_responses)
+        
 
         return response_str
 

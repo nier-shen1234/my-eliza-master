@@ -406,7 +406,7 @@ key: frozen 50
 
 key: help 50
   decomp: *
-    reasmb: I'm here to help! Tell me what device is having trouble—like your laptop, phone, screen, or internet.
+    reasmb: I'm here to help! Tell me what device is having trouble—like your laptop, phone, screen, or internet. Or anything at all.
 
 key: helping 50
   decomp: *
