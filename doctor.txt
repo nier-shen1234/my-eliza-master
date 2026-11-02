@@ -373,5 +373,14 @@ key: screen 50
   decomp: *
     reasmb: Is the screen completely black or just frozen ?
     reasmb: Did you accidentally drop it recently ?
+key: yes 40
+  decomp: *
+    reasmb: Did that fix the problem, or is it still acting up?
+    reasmb: Excellent. Are you still experiencing any lagging issues?
+
+key: no 40
+  decomp: *
+    reasmb: Let's try resetting the network settings. Is it connected to Wi-Fi?
+    reasmb: Okay, let's check the battery health. Does it drain quickly?
     
    
