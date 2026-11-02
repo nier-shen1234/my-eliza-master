@@ -178,9 +178,10 @@ class Eliza:
     def respond(self, text):
         if text.lower() in self.quits:
             return None
-        
+
+        # Offensive language check
         text_lower = text.lower()
-        if any(word in text_lower for word in ['hate', 'stupid', 'idiot', 'awful', 'worst']):
+        if any(word in text_lower for word in ['hate', 'stupid', 'idiot', 'awful', 'worst', 'dumb']):
             self.strike_count += 1
             if self.strike_count >= 3:
                 self.is_banned = True
@@ -188,7 +189,7 @@ class Eliza:
             return f"[WARNING {self.strike_count}/3] Please keep it professional."
 
         # This determines the mood 
-        if any(word in text_lower for word in ['hate', 'stupid', 'idiot', 'awful', 'worst']):
+        if any(word in text_lower for word in ['hate', 'stupid', 'idiot', 'awful', 'worst', 'dumb']):
             self.mood = "defensive"
         elif any(word in text_lower for word in ['love', 'great','thanks', 'awesome', 'best']):
             self.mood = "happy"
