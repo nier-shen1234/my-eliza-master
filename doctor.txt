@@ -385,7 +385,7 @@ key: no 40
     reasmb: Okay, let's check the battery health. Does it drain quickly?
 key: ok 40
   decomp: * ok *
-    reasmb: Awesome! Glad I could help get your device working. Anything else acting up?
+    reasmb: Awesome! Glad I could help get your device working. 
   decomp: * fixed *
     reasmb: That's wonderful to hear! Let me know if you run into any other tech troubles.
   decomp: * good *
