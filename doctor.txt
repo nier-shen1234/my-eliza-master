@@ -407,4 +407,8 @@ key: frozen 50
 key: help 50
   decomp: *
     reasmb: I'm here to help! Tell me what device is having trouble—like your laptop, phone, screen, or internet.
+
+key: helping 50
+  decomp: *
+    reasmb: My apologies! As a vintage tech support bot, my circuits are a bit fried. Have you tried turning it off and on again?
    

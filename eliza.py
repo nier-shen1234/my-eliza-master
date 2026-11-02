@@ -38,6 +38,8 @@ class Eliza:
         self.keys = {}
         self.memory = []
         self.mood = "neutral"
+        self.strike_count = 0
+        self.is_banned = False
 
     def load(self, path):
         key = None
@@ -170,13 +172,22 @@ class Eliza:
                 continue
             return output
         return None
+    
+   
 
     def respond(self, text):
         if text.lower() in self.quits:
             return None
+        
+        text_lower = text.lower()
+        if any(word in text_lower for word in ['hate', 'stupid', 'idiot', 'awful', 'worst']):
+            self.strike_count += 1
+            if self.strike_count >= 3:
+                self.is_banned = True
+                return "ACCESS DENIED: You have exceeded the warning limit. Connection terminated."
+            return f"[WARNING {self.strike_count}/3] Please keep it professional."
 
         # This determines the mood 
-        text_lower = text.lower()
         if any(word in text_lower for word in ['hate', 'stupid', 'idiot', 'awful', 'worst']):
             self.mood = "defensive"
         elif any(word in text_lower for word in ['love', 'great','thanks', 'awesome', 'best']):

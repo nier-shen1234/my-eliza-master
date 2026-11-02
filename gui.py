@@ -54,6 +54,13 @@ class ElizaGUI:
         # Get response from Eliza
         response = self.bot.respond(user_text)
 
+        # Checks if user has access after offensive language
+        if response and "ACCESS DENIED" in response:
+            self.display_message("Eliza: " + response)
+            self.input_field.config(state='disabled')
+            self.send_button.config(state='disabled')
+            return
+
         # Checking if the user triggered a quit command
         if response is None:
             self.display_message("Eliza: " + self.bot.final())
